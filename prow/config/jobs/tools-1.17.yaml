@@ -580,8 +580,8 @@ jobs:
 - command:
   - entrypoint
   - ../test-infra/tools/automator/automator.sh
-  - --org=istio
-  - --repo=common-files
+  - '--org=$AUTOMATOR_ORG'
+  - '--repo=$AUTOMATOR_REPO'
   - '--title=Automator: update build-tools image@$AUTOMATOR_SRC_BRANCH in $AUTOMATOR_ORG/$AUTOMATOR_REPO@$AUTOMATOR_BRANCH'
   - --labels=release-notes-none
   - --modifier=update_image_version

@@ -20,8 +20,8 @@ periodics:
     containers:
     - command:
       - ../test-infra/tools/automator/automator.sh
-      - --org=istio
-      - --repo=istio.io
+      - --org=$AUTOMATOR_ORG
+      - --repo=$AUTOMATOR_REPO
       - '--title=Automator: update istio.io@$AUTOMATOR_SRC_BRANCH reference docs'
       - --labels=auto-merge,release-notes-none
       - --modifier=refdocs
@@ -79,8 +79,8 @@ periodics:
     containers:
     - command:
       - ../test-infra/tools/automator/automator.sh
-      - --org=istio
-      - --repo=istio.io
+      - --org=$AUTOMATOR_ORG
+      - --repo=$AUTOMATOR_REPO
       - '--title=Automator: update istio@$AUTOMATOR_SRC_BRANCH test reference'
       - --labels=release-notes-none
       - --token-path=/etc/github-token/oauth
@@ -916,8 +916,8 @@ presubmits:
       containers:
       - command:
         - ../test-infra/tools/automator/automator.sh
-        - --org=istio
-        - --repo=istio.io
+        - --org=$AUTOMATOR_ORG
+        - --repo=$AUTOMATOR_REPO
         - --token-path=/etc/github-token/oauth
         - --cmd=make update_ref_docs
         - --dry-run

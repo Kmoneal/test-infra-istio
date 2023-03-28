@@ -22,8 +22,8 @@ periodics:
     containers:
     - command:
       - ../test-infra/tools/automator/automator.sh
-      - --org=istio
-      - --repo=proxy
+      - --org=$AUTOMATOR_ORG
+      - --repo=$AUTOMATOR_REPO
       - '--title=Automator: update envoy@$AUTOMATOR_SRC_BRANCH in $AUTOMATOR_ORG/$AUTOMATOR_REPO@$AUTOMATOR_BRANCH'
       - --labels=auto-merge
       - --modifier=update_envoy_dep
@@ -81,8 +81,8 @@ periodics:
     containers:
     - command:
       - ../test-infra/tools/automator/automator.sh
-      - --org=istio
-      - --repo=proxy
+      - --org=$AUTOMATOR_ORG
+      - --repo=$AUTOMATOR_REPO
       - '--title=Automator: update go-control-plane in $AUTOMATOR_ORG/$AUTOMATOR_REPO@$AUTOMATOR_BRANCH'
       - --labels=auto-merge,release-notes-none
       - --modifier=update_deps
@@ -285,8 +285,8 @@ postsubmits:
       containers:
       - command:
         - ../test-infra/tools/automator/automator.sh
-        - --org=istio
-        - --repo=istio
+        - --org=$AUTOMATOR_ORG
+        - --repo=$AUTOMATOR_REPO
         - '--title=Automator: update proxy@$AUTOMATOR_SRC_BRANCH in $AUTOMATOR_ORG/$AUTOMATOR_REPO@$AUTOMATOR_BRANCH'
         - --labels=auto-merge,release-notes-none
         - --modifier=update_proxy_dep

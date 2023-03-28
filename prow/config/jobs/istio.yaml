@@ -370,8 +370,8 @@ jobs:
     cron: "0 2 * * 0" # run each Sunday at 02:00AM UTC
     command:
     - ../test-infra/tools/automator/automator.sh
-    - --org=istio
-    - --repo=istio
+    - '--org=$AUTOMATOR_ORG'
+    - '--repo=$AUTOMATOR_REPO'
     - "--title=Automator: update go-control-plane in $AUTOMATOR_ORG/$AUTOMATOR_REPO@$AUTOMATOR_BRANCH"
     - --labels=auto-merge,release-notes-none
     - --modifier=update_deps

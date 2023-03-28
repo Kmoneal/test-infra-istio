@@ -17,8 +17,8 @@ jobs:
     types: [postsubmit]
     command:
     - ../test-infra/tools/automator/automator.sh
-    - --org=istio
-    - --repo=istio
+    - '--org=$AUTOMATOR_ORG'
+    - '--repo=$AUTOMATOR_REPO'
     - "--title=Automator: update istio/client-go@$AUTOMATOR_SRC_BRANCH dependency in $AUTOMATOR_ORG/$AUTOMATOR_REPO@$AUTOMATOR_BRANCH"
     - --labels=auto-merge,release-notes-none
     - --modifier=update_client-go_dep

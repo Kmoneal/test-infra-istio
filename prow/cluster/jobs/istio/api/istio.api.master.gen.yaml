@@ -99,8 +99,8 @@ postsubmits:
       containers:
       - command:
         - ../test-infra/tools/automator/automator.sh
-        - --org=istio
-        - --repo=client-go
+        - --org=$AUTOMATOR_ORG
+        - --repo=$AUTOMATOR_REPO
         - '--title=Automator: update istio/api@$AUTOMATOR_SRC_BRANCH dependency in
           $AUTOMATOR_ORG/$AUTOMATOR_REPO@$AUTOMATOR_BRANCH'
         - --labels=auto-merge,release-notes-none

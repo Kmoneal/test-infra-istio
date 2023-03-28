@@ -95,8 +95,8 @@ jobs:
     cron: "05 15-23 * * 1-5"  # Run at 7:05-15:05 PST (15:05 UTC) Mon-Fri
     command:
     - ./tools/automator/automator.sh
-    - --org=istio
-    - --repo=test-infra
+    - '--org=$AUTOMATOR_ORG'
+    - '--repo=$AUTOMATOR_REPO'
     - "--title=Automator: bump k8s-prow images"
     - --modifier=bump-k8s-prow-images
     - --token-path=/etc/github-token/oauth
